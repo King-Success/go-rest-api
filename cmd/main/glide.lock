@@ -1,5 +1,5 @@
 hash: 3441bf6ff6d443d7e65fcdfc4f1d1b67e506cee012ed3b4901bbe2aab9890aa9
-updated: 2020-02-05T19:48:54.260056+01:00
+updated: 2020-02-05T20:03:14.040475+01:00
 imports:
 - name: github.com/go-sql-driver/mysql
   version: 17ef3dd9d98b69acec3e85878995ada9533a9370
@@ -12,7 +12,7 @@ imports:
 - name: github.com/jinzhu/inflection
   version: f5c5f50e6090ae76a29240b61ae2a90dd810112e
 - name: github.com/king-success/go-rest-api
-  version: d89fa559dc2e2e2a2252db577f00fe8df7ba8cd2
+  version: aec1c53c26f7bfe861334570b03cf2879279b7f8
   subpackages:
   - pkg/config
   - pkg/controllers

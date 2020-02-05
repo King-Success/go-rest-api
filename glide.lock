@@ -1,4 +1,22 @@
 hash: 3441bf6ff6d443d7e65fcdfc4f1d1b67e506cee012ed3b4901bbe2aab9890aa9
-updated: 2020-02-05T17:19:05.041673+01:00
-imports: []
+updated: 2020-02-05T19:48:54.260056+01:00
+imports:
+- name: github.com/go-sql-driver/mysql
+  version: 17ef3dd9d98b69acec3e85878995ada9533a9370
+- name: github.com/gorilla/mux
+  version: 75dcda0896e109a2a22c9315bca3bb21b87b2ba5
+- name: github.com/jinzhu/gorm
+  version: 7180bd0f27d167f18c253c32d548c7de3adc6b0d
+  subpackages:
+  - dialects/mysql
+- name: github.com/jinzhu/inflection
+  version: f5c5f50e6090ae76a29240b61ae2a90dd810112e
+- name: github.com/king-success/go-rest-api
+  version: d89fa559dc2e2e2a2252db577f00fe8df7ba8cd2
+  subpackages:
+  - pkg/config
+  - pkg/controllers
+  - pkg/models
+  - pkg/routes
+  - pkg/utils
 testImports: []

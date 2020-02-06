@@ -3,14 +3,14 @@ package controllers
 import (
   "encoding/json"
 	"fmt"
-	"github.com/king-success/go-rest-api/pkg/utils"
+	"go-rest-api/pkg/util"
 	"github.com/gorilla/mux"
 	"net/http"
 	"strconv"
-	"github.com/king-success/go-rest-api/pkg/models"
+	"go-rest-api/pkg/models"
 )
 
-var NewBook model.Book;
+var NewBook models.Book;
 
 func CreateBook(w http.ResponseWriter, r *http.Request) {
   CreateBook := &models.Book{}
@@ -24,7 +24,7 @@ func CreateBook(w http.ResponseWriter, r *http.Request) {
 func GetBook(w http.ResponseWriter, r *http.Request){
   newBook := models.GetAllBooks()
   res, _ := json.Marshal(newBook)
-  w.WriteHeader("Content-Type", "pkglication/json")
+  w.Header().Set("Content-Type", "pkglication/json")
   w.WriteHeader(http.StatusOK)
   w.Write(res)
 }
@@ -34,13 +34,14 @@ func GetBookById(w http.ResponseWriter, r *http.Request){
   bookId := vars["bookId"]
   ID, err := strconv.ParseInt(bookId, 0, 0)
   if err != nil {
-    fmt.PrintLn("Error while parsing bookId")
+    fmt.Println("Error while parsing bookId")
   }
 
   books, _ := models.GetBookById(ID)
   res, _ := json.Marshal(books)
-  w.WriteHeader("Content-Type", "pkglication/json")
+  w.Header().Set("Content-Type", "pkglication/json")
   w.WriteHeader(http.StatusOK)
+  w.Write(res)
 }
 
 func UpdateBook(w http.ResponseWriter, r *http.Request){
@@ -50,9 +51,9 @@ func UpdateBook(w http.ResponseWriter, r *http.Request){
   bookId := vars["bookId"]
   ID, err := strconv.ParseInt(bookId, 0, 0)
   if err != nil {
-    fmt.PrintLn("Error while parsing bookId")
+    fmt.Println("Error while parsing bookId")
   }
-  book, db:= models.GetBookById(Id)
+  book, db:= models.GetBookById(ID)
   if updateBook.Name != "" {
     book.Name = updateBook.Name
   }
@@ -64,7 +65,7 @@ func UpdateBook(w http.ResponseWriter, r *http.Request){
   }
   db.Save(&book);
   res, _ := json.Marshal(book);
-  w.WriteHeader("Content-Type", "pkglication/json")
+  w.Header().Set("Content-Type", "pkglication/json")
   w.WriteHeader(http.StatusOK)
   w.Write(res)
 }
@@ -74,11 +75,11 @@ func DeleteBook(w http.ResponseWriter, r *http.Request){
   bookId := vars["bookId"]
   ID, err := strconv.ParseInt(bookId, 0, 0)
   if err != nil {
-    fmt.PrintLn("Error while parsing bookId")
+    fmt.Println("Error while parsing bookId")
   }
   books := models.DeleteBook(ID)
   res, _ := json.Marshal(books)
-  w.WriteHeader("Content-Type", "pkglication/json")
+  w.Header().Set("Content-Type", "pkglication/json")
   w.WriteHeader(http.StatusOK)
   w.Write(res)
 }

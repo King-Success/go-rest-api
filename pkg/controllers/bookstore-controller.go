@@ -3,11 +3,11 @@ package controllers
 import (
   "encoding/json"
 	"fmt"
-	"github.com/kings-success/go-rest-api/pkg/util"
+	"github.com/king-success/go-rest-api/utils"
 	"github.com/gorilla/mux"
 	"net/http"
 	"strconv"
-	"github.com/kings-success/go-rest-api/pkg/models"
+	"github.com/king-success/go-rest-api/models"
 )
 
 var NewBook models.Book;

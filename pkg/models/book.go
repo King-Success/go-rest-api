@@ -1,7 +1,7 @@
 package models
 
 import (
-	"go-rest-api/pkg/config"
+	"github.com/king-success/go-rest-api/config"
 	"github.com/jinzhu/gorm"
 )
 

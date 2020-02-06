@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/king-success/go-rest-api/controllers"
+	"github.com/king-success/go-rest-api/pkg/controllers"
 	"github.com/gorilla/mux"
 )
 
